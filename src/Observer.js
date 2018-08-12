@@ -194,6 +194,9 @@ class Observer {
      * @param {undefined} fn 无返回值
      */
     addWatcher(dependences,fn,shouldExecuteWatcher){
+        if(typeof(dependences) === 'string'){
+            dependences = [dependences]
+        }
         propsWatchers.push({
             dependences,
             fn,

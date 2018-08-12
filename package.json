@@ -1,5 +1,5 @@
 {
-  "name": "observer",
+  "name": "observer-watch",
   "version": "0.0.1",
   "description": "a javascript library that can watch multiple props change",
   "main": "index.js",

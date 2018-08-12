@@ -4,7 +4,11 @@
   "description": "a javascript library that can watch multiple props change",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "babel src -d build",
+    "test": "jest"
+  },
+  "babel":{
+    "presets":["latest"]
   },
   "repository": {
     "type": "git",

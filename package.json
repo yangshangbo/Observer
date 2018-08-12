@@ -21,6 +21,9 @@
   },
   "homepage": "https://github.com/yangshangbo/Observer#readme",
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-latest": "^6.24.1",
+    "jest": "^23.5.0",
     "lodash": "^4.17.10"
   }
 }

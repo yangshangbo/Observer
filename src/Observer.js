@@ -95,6 +95,32 @@ class Observer {
         return cloneDeep(object)
     }
     /**
+     * @description 比较两个数组内容
+     * @param  {Array} a1 新值
+     * @param  {Array} a2 旧值
+     * @return {{increase:[],decrease:[]}}      返回一个标识数组变化对象 'decrease'减少,'increase'增加
+     */
+    static _diffArray(a1,a2){
+	if(toString(a1) !== 'array' || toString(a2) !== 'array'){
+		console.error('Type Error,arguments 0 and arguments 1 shoud be typeof array,please check it');
+		return;
+	}
+	let newArray = cloneDeep(a1);
+	let oldArray = cloneDeep(a2);
+	for(let i=oldArray.length;i>=0;i--){
+		for(let j=newArray.length;j>=0;j--){
+		    if(isEqual(oldArray[i],newArray[j]) ){
+			newArray.splice(j,1);
+			oldArray.splice(i,1);
+		    }
+		}
+	};
+	return {
+	  increase:newArray,
+          decrease:oldArray
+	}
+    }
+    /**
      * @description 初始化
      * @param {Object} observer 被监听的对象
      * @return {undefined} 无返回值

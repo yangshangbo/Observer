@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "build": "babel src -d build",
-    "test": "jest"
+    "test": "jest src",
+    "dev":"watch 'npm run build' src",
+    "prepublish": "npm run build"
   },
   "babel":{
     "presets":["latest"]
@@ -28,6 +30,9 @@
     "babel-cli": "^6.26.0",
     "babel-preset-latest": "^6.24.1",
     "jest": "^23.5.0",
+    "watch":"^1.0.1"
+  },
+  "dependencies": {
     "lodash": "^4.17.10"
   }
 }
